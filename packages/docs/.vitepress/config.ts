@@ -381,7 +381,7 @@ const config = defineConfig({
                 link: '/ja/guide/',
               },
               {
-                text: 'Dynamic Route Matching',
+                text: 'Dynamic Route Matching 🇯🇵',
                 link: '/ja/guide/essentials/dynamic-matching.html',
               },
               {
