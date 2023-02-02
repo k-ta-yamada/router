@@ -1,13 +1,13 @@
-# Getting Started
+# はじめに {#getting-started}
 
 <VueSchoolLink
   href="https://vueschool.io/courses/vue-router-4-for-everyone"
   title="Learn how to build powerful Single Page Applications with the Vue Router on Vue School"
 >Watch a Free Vue Router Video Course</VueSchoolLink>
 
-Creating a Single-page Application with Vue + Vue Router feels natural: with Vue.js, we are already composing our application with components. When adding Vue Router to the mix, all we need to do is map our components to the routes and let Vue Router know where to render them. Here's a basic example:
+Vue + Vue Router を使用した単一ページ アプリケーションの作成は自然に感じられます: Vue.js では、すでにコンポーネントでアプリケーションを構成しています。Vue Router をミックスに加える際に必要なのは、コンポーネントをルートにマッピングして、Vue Router にそれらをレンダリングする場所を知らせることです。以下は基本的な例です:
 
-## HTML
+## HTML {#html}
 
 ```html
 <script src="https://unpkg.com/vue@3"></script>
@@ -28,45 +28,45 @@ Creating a Single-page Application with Vue + Vue Router feels natural: with Vue
 </div>
 ```
 
-### `router-link`
+### `router-link` {#router-link}
 
-Note how instead of using regular `a` tags, we use a custom component `router-link` to create links. This allows Vue Router to change the URL without reloading the page, handle URL generation as well as its encoding. We will see later how to benefit from these features.
+通常の `a` タグを使用する代わりに、カスタムコンポーネントの `router-link` を使用してリンクを作成していることに注意してください。これにより、Vue Router は、ページを再読み込みせずに URL を変更し、URL の生成とそのエンコーディングを処理することができます。これらの機能をどのように利用するかは、後で説明します。
 
-### `router-view`
+### `router-view` {#router-view}
 
-`router-view` will display the component that corresponds to the url. You can put it anywhere to adapt it to your layout.
+`router-view` は、url に対応するコンポーネントを表示します。レイアウトに合わせるために、どこにでも置くことができます。
 
 <VueMasteryLogoLink></VueMasteryLogoLink>
 
-## JavaScript
+## JavaScript {#javascript}
 
 ```js
-// 1. Define route components.
-// These can be imported from other files
+// 1. ルートコンポーネントを定義します。
+// これらは、他のファイルからインポートすることができます
 const Home = { template: '<div>Home</div>' }
 const About = { template: '<div>About</div>' }
 
-// 2. Define some routes
-// Each route should map to a component.
-// We'll talk about nested routes later.
+// 2. いくつかのルートを定義します
+// 各ルートは、コンポーネントにマッピングする必要があります。
+// ネストされたルートについては、後で説明します。
 const routes = [
   { path: '/', component: Home },
   { path: '/about', component: About },
 ]
 
-// 3. Create the router instance and pass the `routes` option
-// You can pass in additional options here, but let's
-// keep it simple for now.
+// 3. ルーターインスタンスを作成し、`routes` オプションを渡します
+// ここで追加のオプションを渡すことができますが、
+// 今はシンプルにしておきましょう。
 const router = VueRouter.createRouter({
-  // 4. Provide the history implementation to use. We are using the hash history for simplicity here.
+  // 4. 使用する履歴の実装を提供します。ここでは簡単のため、ハッシュ履歴を使用します。
   history: VueRouter.createWebHashHistory(),
   routes, // short for `routes: routes`
 })
 
-// 5. Create and mount the root instance.
+// 5. ルートインスタンスを作成し、マウントします。
 const app = Vue.createApp({})
-// Make sure to _use_ the router instance to make the
-// whole app router-aware.
+// アプリ全体をルーター対応にするために、
+// 必ずルーター インスタンスを _使用_ してください。
 app.use(router)
 
 app.mount('#app')
@@ -74,14 +74,14 @@ app.mount('#app')
 // Now the app has started!
 ```
 
-By calling `app.use(router)`, we get access to it as `this.$router` as well as the current route as `this.$route` inside of any component:
+`app.use(router)` を呼び出すと、`this.$router` として、また、任意のコンポーネント内で `this.$route` として現在のルートにアクセスすることができます:
 
 ```js
 // Home.vue
 export default {
   computed: {
     username() {
-      // We will see what `params` is shortly
+      // `params` が何であるかはすぐにわかります
       return this.$route.params.username
     },
   },
@@ -97,6 +97,6 @@ export default {
 }
 ```
 
-To access the router or the route inside the `setup` function, call the `useRouter` or `useRoute` functions. We will learn more about this in [the Composition API](./advanced/composition-api.md#accessing-the-router-and-current-route-inside-setup)
+`setup` 関数内部でルーターやルートにアクセスするには、`useRouter` 関数や `useRoute` 関数を呼び出します。これについては [Composition API](./advanced/composition-api.md#accessing-the-router-and-current-route-inside-setup) で詳しく説明します。
 
-Throughout the docs, we will often use the `router` instance. Keep in mind that `this.$router` is exactly the same as directly using the `router` instance created through `createRouter`. The reason we use `this.$router` is because we don't want to import the router in every single component that needs to manipulate routing.
+このドキュメントでは、しばしば `router` インスタンスを使用します。`this.$router` は、`createRouter` で作成した `router` インスタンスを直接使用するのとまったく同じだということを覚えておいてください。`this.$router` を使用する理由は、ルーティングを操作する必要のあるコンポーネントでいちいちルーターをインポートしたくないからです。
