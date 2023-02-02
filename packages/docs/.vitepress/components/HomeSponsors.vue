@@ -25,6 +25,7 @@ const { site } = useData()
 const translations = {
   'en-US': 'Become a Sponsor!',
   'zh-CN': '成为赞助者！',
+  'ja-JP': 'Become a Sponsor!',
 }
 </script>
 

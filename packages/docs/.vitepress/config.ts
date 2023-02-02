@@ -44,6 +44,11 @@ const config = defineConfig({
       title: 'Vue Router',
       description: 'Vue.js 的官方路由',
     },
+    '/ja/': {
+      lang: 'ja-JP',
+      title: 'Vue Router',
+      description: 'Vue.jsの公式ルーター',
+    },
   },
 
   themeConfig: {
@@ -332,6 +337,140 @@ const config = defineConfig({
           {
             text: '从 Vue2 迁移',
             link: '/zh/guide/migration/index.html',
+          },
+        ],
+      },
+      // Japanese
+      '/ja/': {
+        label: '日本語',
+        selectText: 'Languages',
+        nav: [
+          {
+            text: 'Guide',
+            link: '/ja/guide/',
+          },
+          {
+            text: 'API Reference',
+            link: '/ja/api/',
+          },
+          {
+            text: 'v4.x',
+            items: [{ text: 'v3.x', link: 'https://v3.router.vuejs.org/ja' }],
+          },
+          {
+            text: 'Changelog',
+            link: 'https://github.com/vuejs/router/blob/main/packages/router/CHANGELOG.md',
+          },
+        ],
+
+        sidebar: [
+          {
+            text: 'Introduction 🇯🇵',
+            link: '/ja/introduction.html',
+          },
+          {
+            text: 'Installation 🇯🇵',
+            link: '/ja/installation.html',
+          },
+          {
+            text: 'Essentials',
+            collapsable: false,
+            children: [
+              {
+                text: 'Getting Started 🇯🇵',
+                link: '/ja/guide/',
+              },
+              {
+                text: 'Dynamic Route Matching',
+                link: '/ja/guide/essentials/dynamic-matching.html',
+              },
+              {
+                text: "Routes' Matching Syntax",
+                link: '/ja/guide/essentials/route-matching-syntax.html',
+              },
+              {
+                text: 'Nested Routes',
+                link: '/ja/guide/essentials/nested-routes.html',
+              },
+              {
+                text: 'Programmatic Navigation',
+                link: '/ja/guide/essentials/navigation.html',
+              },
+              {
+                text: 'Named Routes',
+                link: '/ja/guide/essentials/named-routes.html',
+              },
+              {
+                text: 'Named Views',
+                link: '/ja/guide/essentials/named-views.html',
+              },
+              {
+                text: 'Redirect and Alias',
+                link: '/ja/guide/essentials/redirect-and-alias.html',
+              },
+              {
+                text: 'Passing Props to Route Components',
+                link: '/ja/guide/essentials/passing-props.html',
+              },
+              {
+                text: 'Different History modes',
+                link: '/ja/guide/essentials/history-mode.html',
+              },
+            ],
+          },
+          {
+            text: 'Advanced',
+            collapsable: false,
+            children: [
+              {
+                text: 'Navigation guards',
+                link: '/ja/guide/advanced/navigation-guards.html',
+              },
+              {
+                text: 'Route Meta Fields',
+                link: '/ja/guide/advanced/meta.html',
+              },
+              {
+                text: 'Data Fetching',
+                link: '/ja/guide/advanced/data-fetching.html',
+              },
+              {
+                text: 'Composition API',
+                link: '/ja/guide/advanced/composition-api.html',
+              },
+              {
+                text: 'Transitions',
+                link: '/ja/guide/advanced/transitions.html',
+              },
+              {
+                text: 'Scroll Behavior',
+                link: '/ja/guide/advanced/scroll-behavior.html',
+              },
+              {
+                text: 'Lazy Loading Routes',
+                link: '/ja/guide/advanced/lazy-loading.html',
+              },
+              {
+                text: 'Typed Routes',
+                link: '/ja/guide/advanced/typed-routes.html',
+              },
+              {
+                text: 'Extending RouterLink',
+                link: '/ja/guide/advanced/extending-router-link.html',
+              },
+              {
+                text: 'Navigation Failures',
+                link: '/ja/guide/advanced/navigation-failures.html',
+              },
+              {
+                text: 'Dynamic Routing',
+                link: '/ja/guide/advanced/dynamic-routing.html',
+              },
+            ],
+          },
+          {
+            text: 'Migrating from Vue 2',
+            link: '/ja/guide/migration/index.html',
           },
         ],
       },
